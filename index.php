@@ -5,4 +5,5 @@
   //Inclusion del archivo motor
   include_once 'libreria/core.php';
   //echo RUTA_BASE;
+  //echo hola mundo;
  ?>

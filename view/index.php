@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Sistema de Ventas</title>
+    <?php include (VISTA_RUTA .'inc/head.php') ?>
+    </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1>Sistema de Ventas</h1>
+          <hr>
+            <a href="<?php url('login') ?>" class="btn btn-primary"> Ingresar al Sistema <i class="fa fa-arrow-right"></i> </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

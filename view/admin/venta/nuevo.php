@@ -47,8 +47,11 @@
                               </tr>
                              </thead>
                              <tbody>
-                              <tr>
-                                <td></td>
+                              <tr ng-repeat="pd in productosAdd" >
+                                <td>{{pd.nombre}}</td>
+                                <td>{{pd.cantidad}}</td>
+                                <td>{{pd.precio}}</td>
+                                <td>{{pd.subtotal}}</td>
                               </tr>
                              </tbody>
                       </table>
@@ -82,7 +85,11 @@
                               <tr ng-repeat=" producto in productos | filter:buscarProducto" >
                                 <td>{{producto.nombre}}</td>
                                 <td>{{producto.precio | currency : 'USD./ ' }}</td>
-                                <td><button type="button" class="btn btn-sm btn-primary"> <i class="fa fa-plus-circle "></i></button></td>
+                                <td>
+                                  <button ng-click ="seleccionarProducto(producto.id)" type="button" class="btn btn-sm btn-primary">
+                                    <i class="fa fa-plus-circle "></i>
+                                  </button>
+                                </td>
                               </tr>
                              </tbody>
                       </table>

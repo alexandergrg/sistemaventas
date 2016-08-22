@@ -2,12 +2,14 @@ CREATE DATABASE bd_ventas;
 USE bd_ventas;
 
 
--- Creación de Tablas 
+-- Creación de Tablas
 
-CREATE TABLE producto (
+CREATE TABLE productos (
 	id int auto_increment ,
     nombre varchar (100) not null,
     precio double not null default 0,
+		categoria varchar (250) not null,
+		descripcion varchar (250),
     primary key (id)
 );
 
@@ -37,4 +39,3 @@ CREATE TABLE users(
     privilegio varchar(50) not null,
     primary key(id)
 );
-

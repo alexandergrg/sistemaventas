@@ -24,7 +24,7 @@ class ProductoController
   public function agregar(){
     try {
       if (input('id_producto')) {
-        $producto = Producto::find(input('id_producto'),'id_producto');
+        $producto = Producto::find(input('id_producto'));
         //echo input('id_producto');
         //var_dump($producto);
       }else{
@@ -33,8 +33,8 @@ class ProductoController
 
       $producto->nombre= input('nombre');
       $producto->precio= input('precio');
-      $producto->descripcion= input('descripcion');
       $producto->categoria= input('categoria');
+      $producto->descripcion= input('descripcion');
       $producto->guardar();
       redirecciona()->to('producto');
     } catch (Exception $e) {
@@ -43,7 +43,7 @@ class ProductoController
   }
 
   public function editar($id){
-    $producto =  Producto::find($id, 'id_producto');
+    $producto =  Producto::find($id);
     var_dump($productos);
     if (count($producto)) {
         return Vista::crear('admin.producto.nuevo',array('producto'=>$producto));
@@ -53,9 +53,11 @@ class ProductoController
   }
 
   public function eliminar($id){
-    $producto =  Producto::find($id, 'id_producto');
+    $producto =  Producto::find($id);
+    var_dump($producto);
+    exit();
     if (count($producto)) {
-      $producto->eliminar($id,'id_producto');
+      $producto->eliminar($id);
       return redirecciona()->to('producto');
     }
     return redirecciona()->to('producto');

@@ -51,6 +51,8 @@ class EtORM extends \Conexion
           foreach($res as $row){
               $obj[] = $row;
           }
+          //var_dump($obj);
+          //exit();
           return $obj;
       }
 

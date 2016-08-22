@@ -21,10 +21,14 @@ use libreria\ORM\EtORM;
       //echo 'esta bién logueado' ;
       //echo input('email') . '</br>';
       //echo input('password') . '</br>';
+
       $user= input('email');
-      $password = encriptar(input('password'));
+      //$password = encriptar(input('password'));
+      $password = input('password');
       $objOrm= new EtORM();
       $data = $objOrm->Ejecutar('login',array($user,$password));
+      //var_dump($data);
+      //exit();
       if (count($data) > 0) {
         $_SESSION['usuario'] = $data[0]['usuario'];
         $_SESSION['email'] = $data[0]['email'];
